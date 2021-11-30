@@ -1,0 +1,29 @@
+/**
+ * Pagination 补丁
+**/
+
+.@{pagination-prefix-cls} {
+  &-item {
+    &-active,
+    &-active:hover,
+    &-active:focus,
+    &-active a,
+    &-active:hover a,
+    &-active:focus a {
+      background-color: @primary-color;
+      color: @btn-primary-color;
+      border-color: transparent;
+    }
+  }
+  .@{pagination-prefix-cls}-item-ellipsis{
+    border: 1px solid #ddd;
+    border-radius: 2px;
+  }
+  .@{ked-prefix}-select-selection__rendered{
+    margin: 0 4px 0 0 !important;
+    padding: 0 24px 0 12px;
+  }
+  .@{ked-prefix}-select-arrow{
+    right: 12px;
+  }
+}

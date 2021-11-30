@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "outDir": "./build/",
+    "rootDir": "./buildTask/",
+    "sourceMap": false,
+    "declaration": true,
+    "noImplicitAny": false,
+    "module": "commonjs",
+    "target": "es2017",
+    "esModuleInterop": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "maxNodeModuleJsDepth": 4,
+    "pretty": true,
+    "jsx": "react",
+    "lib": ["esnext"]
+  },
+  "include": [
+    "./buildTask/**/*.ts",
+    "./buildTask/**/*.tsx",
+    "./buildTask/**/*.json"
+  ]
+}

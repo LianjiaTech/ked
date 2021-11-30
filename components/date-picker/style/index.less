@@ -1,0 +1,74 @@
+@import '../../style/themes/index';
+@import '../../style/mixins/index';
+// @import '../../input/style/mixin';
+// @import '../../button/style/mixin';
+
+@calendar-prefix-cls: ~'@{ked-prefix}-calendar';
+@calendar-timepicker-prefix-cls: ~'@{ked-prefix}-calendar-time-picker';
+
+@import 'Picker';
+@import 'Calendar';
+@import 'RangePicker';
+@import 'TimePicker';
+@import 'MonthPanel';
+@import 'YearPanel';
+@import 'DecadePanel';
+@import 'MonthPicker';
+@import 'WeekPicker';
+
+.@{calendar-prefix-cls}{
+    margin-top: 38px;
+}
+.@{calendar-prefix-cls}-input-wrap{
+    display: none;
+}
+.@{calendar-prefix-cls}-picker-input {
+    min-width: 230px;
+}
+.@{calendar-prefix-cls}-range-picker .@{calendar-prefix-cls}-picker-input{
+    min-width: 280px;
+}
+.@{calendar-prefix-cls}-footer{
+    height: 47.9px;
+    line-height: 47.9px
+}
+.@{ked-prefix}-input::-webkit-input-placeholder {
+    color: #999;
+  }
+  input::-moz-input-placeholder {
+    color: #999;
+  }
+  input::-ms-input-placeholder {
+    color: #999;
+  }
+  .edit-time{
+      position: relative;
+      .@{calendar-prefix-cls}-picker-icon{
+          display: none;
+      }
+     .edit-icon{
+         z-index: 11;
+         top:10px;
+         left: 249px;
+         position: absolute;
+     }
+  }
+  .@{calendar-prefix-cls}-selected-day .@{calendar-prefix-cls}-date{
+    background: #fff;
+  }
+  
+  .@{calendar-prefix-cls}-selected-date .@{calendar-prefix-cls}-date{
+      background: #0984f9 !important;
+  }
+  .focus_border .@{calendar-prefix-cls}-picker-input{
+    border: 1px solid #0984f9
+  }
+
+
+  .@{calendar-prefix-cls}-time .@{calendar-prefix-cls}-footer{
+    z-index: 100;
+    background-color: white;
+  }
+  .@{calendar-prefix-cls}-range.@{calendar-prefix-cls}-time .@{calendar-prefix-cls}-time-picker-inner{
+    padding-top:0 !important
+  }

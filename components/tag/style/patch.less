@@ -1,0 +1,76 @@
+/**
+ * Tag 样式补丁
+**/
+@tag-patch-prefix-cls: ~'@{ked-patch-prefix}-tag';
+
+// 改变默认tag的样式
+.@{tag-prefix-cls} {
+  padding: 4px 8px;
+  background-color: @grey-7;
+  font-size: 14px;
+  line-height: 20px;
+  color: @black-1;
+  border-color: transparent;
+  a {
+    color: @primary-color;
+  }
+  .@{iconfont-css-prefix}-close {
+    color: inherit;
+  }
+  &-has-color {
+    border-color: transparent;
+    &,
+    a,
+    a:hover,
+    .@{iconfont-css-prefix}-close,
+    .@{iconfont-css-prefix}-close:hover {
+      color: @text-color-inverse;
+    }
+  }
+  &-checkable {
+    background-color: transparent;
+    border-color: transparent;
+    color: @text-color;
+    &:not(&-checked):hover {
+      color: @primary-color;
+    }
+    &:active,
+    &-checked {
+      color: @text-color-inverse;
+    }
+    &-checked {
+      background-color: @primary-6;
+    }
+    &:active {
+      background-color: @primary-7;
+    }
+  }
+  // mixin to iterate over colors and create CSS class for each one
+  .make-color-classes(@i: length(@preset-colors)) when (@i > 0) {
+    .make-color-classes(@i - 1);
+    @color: extract(@preset-colors, @i);
+    @lightColor: '@{color}-1';
+    @lightBorderColor: '@{color}-3';
+    @darkColor: '@{color}-6';
+    &-@{color} {
+      color: @@darkColor;
+      background: @@lightColor;
+      border-color: transparent;
+    }
+    &-@{color}-inverse {
+      color: @text-color-inverse;
+      background: @@darkColor;
+      border-color: transparent;
+    }
+  }
+  .make-color-classes();
+}
+
+.@{tag-patch-prefix-cls} {
+  &-bordered.@{tag-prefix-cls}-checkable-checked,
+  &-bordered:not(.@{tag-prefix-cls}-checkable) {
+    border-color: @primary-color;
+    color: @primary-color;
+    background-color: @white;
+  }
+}

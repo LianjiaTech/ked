@@ -1,0 +1,17 @@
+// input status
+// == when focus or actived
+.@{progress-prefix-cls} {
+  &-circle-path {
+    stroke: @progress-default-color !important;
+  }
+  &-status-exception {
+    .@{progress-prefix-cls}-circle-path {
+      stroke: @error-color !important;
+    }
+  }
+  &-status-success {
+    .@{progress-prefix-cls}-circle-path {
+      stroke: @success-color !important;
+    }
+  }
+}

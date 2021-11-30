@@ -1,0 +1,26 @@
+@import '../../style/themes/index';
+@import '../../style/mixins/index';
+
+@popover-prefix-cls: ~'@{ked-prefix}-popover';
+
+.@{popover-prefix-cls} {
+  &-message > .anticon {
+    display: none;
+  }
+  &-message-title {
+    padding-left: 0 !important;
+  }
+  &-buttons {
+    button {
+      padding: 0 26px;
+    }
+    .@{ked-prefix}-btn {
+      color: @grey-5;
+      border: 1px solid @grey-6;
+    }
+    .@{ked-prefix}-btn-primary {
+      color: @white;
+      border: 1px solid @blue-6;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.ui-color-content {
+  .desc {
+    color: #9399A5;
+  }
+  .color-wrap {
+    display: flex;
+  }
+  .color-box {
+    & > div:first-child {
+      height: 50px;
+      line-height: 50px;
+      border: 1px solid transparent;
+      color: #fff;
+      padding-left: 10px;
+    }
+    .title {
+      margin-top: 15px;
+    }
+  }
+  &.ui-color-separate {
+    .color-box {
+      margin-right: 10px;
+    }
+  }
+}

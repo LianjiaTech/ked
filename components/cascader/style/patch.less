@@ -1,0 +1,13 @@
+/**
+ * Select 样式补丁
+**/
+
+// 调整select下拉框 hover状态颜色
+.@{cascader-prefix-cls} {
+  &-menu-item {
+    &:hover:not(&-disabled) {
+      color: @primary-color;
+      background-color: @item-hover-bg;
+    }
+  }
+}

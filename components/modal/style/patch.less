@@ -1,0 +1,88 @@
+/**
+ * Modal 样式补丁
+**/
+@modal-prefix-cls: ~'@{ked-prefix}-modal';
+@modal-patch-prefix-cls: ~'@{ked-patch-prefix}-modal';
+.@{modal-prefix-cls} {
+  &-confirm-confirm,
+  &-confirm-info,
+  &-confirm-warning,
+  &-confirm-success,
+  &-confirm-error {
+    // .anticon {
+    //   margin-right: 8px;
+    //   margin-top: 4px;
+    //   font-size: 20px;
+    // }
+    .@{modal-prefix-cls}-header {
+      border-bottom: none;
+    }
+  }
+  &-confirm-info {
+    .@{modal-prefix-cls}-confirm-body > .anticon {
+      color: @blue-6;
+    }
+  }
+  &-confirm-warning {
+    .@{modal-prefix-cls}-header .anticon {
+      color: @gold-6;
+    }
+  }
+  &-confirm-success {
+    .@{modal-prefix-cls}-header .anticon {
+      color: @green-6;
+    }
+  }
+  &-confirm-error {
+    .@{modal-prefix-cls}-header .anticon {
+      color: @red-6;
+    }
+  }
+  &-footer {
+    border-top: none;
+    padding: 0 32px 32px;
+  }
+
+  .@{ked-prefix}-btn {
+    padding: 0 23px;
+    // border-radius: 4px;
+    /* border-color: #cacaca; */
+  }
+}
+.@{modal-patch-prefix-cls} {
+  &-confirm-info,
+  &-confirm-warning,
+  &-confirm-success,
+  &-confirm-error {
+    .@{modal-prefix-cls}-header {
+      border-bottom: none;
+      .anticon {
+        margin-right: 8px;
+        font-size: 20px;
+      }
+    }
+    .@{modal-prefix-cls}-body {
+      /* padding: 0 24px; */
+    }
+  }
+  &-confirm-info {
+    .@{modal-prefix-cls}-confirm-body > .anticon {
+      color: @blue-6;
+    }
+  }
+  &-confirm-warning {
+    .@{modal-prefix-cls}-header .anticon {
+      color: @gold-6;
+    }
+  }
+  &-confirm-success {
+    .@{modal-prefix-cls}-header .anticon {
+      color: @green-6;
+    }
+  }
+  &-confirm-error {
+    .@{modal-prefix-cls}-header .anticon {
+      color: @red-6;
+    }
+  }
+}

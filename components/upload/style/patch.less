@@ -1,0 +1,54 @@
+@upload-patch-prefix-cls: ~'@{ked-patch-prefix}-upload';
+
+.@{upload-patch-prefix-cls} {
+  .@{upload-prefix-cls} {
+    &-list-item-actions {
+      position: unset;
+      opacity: 1;
+
+      a {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        opacity: 0;
+      }
+
+      .anticon-delete {
+        position: absolute;
+        top: 2px;
+        right: -2px;
+        opacity: 1;
+
+        &:before {
+          content: '\00d7';
+          width: 16px;
+          height: 16px;
+          background-color: @primary-color;
+          color: @white;
+          font-size: 14px;
+          line-height: 14px;
+          border-radius: 50%;
+          pointer-events: none;
+          display: inline-block;
+        }
+        svg {
+          display: none;
+        }
+      }
+    }
+
+    &-list-picture-card {
+      .@{upload-item}:hover {
+        .@{upload-prefix-cls} {
+          &-list-item-actions {
+            a {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

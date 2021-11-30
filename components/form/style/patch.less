@@ -1,0 +1,74 @@
+/**
+ * form 样式补丁
+**/
+@form-patch-prefix-cls: ~'@{ked-patch-prefix}-form';
+
+.@{form-prefix-cls}-item {
+  margin-bottom: 17px;
+}
+
+.@{form-prefix-cls}-item-with-help {
+  margin-bottom: 0;
+}
+
+.@{form-prefix-cls}-explain {
+  margin-top: -2px;
+  margin-bottom: -3px;
+}
+.@{form-patch-prefix-cls}-label-left-5 .@{form-prefix-cls}-item-label,
+.@{form-patch-prefix-cls}-label-left-8 .@{form-prefix-cls}-item-label,
+.@{form-prefix-cls}-item-label.@{form-prefix-cls}-item-label-left {
+  line-height: 22px;
+  margin-top: 8px;
+
+  label {
+    display: flex;
+    align-items: baseline;
+    white-space: normal;
+    word-break: break-all;
+
+    &::before {
+      display: inline-block;
+      margin-right: 4px;
+      color: transparent;
+      font-size: 14px;
+      font-family: SimSun, sans-serif;
+      line-height: 1;
+      content: '*';
+    }
+  }
+
+  .@{form-prefix-cls}-item-required::before {
+    color: @red-6;
+  }
+}
+
+.@{form-patch-prefix-cls} {
+  &-label-left-5, &-label-left-8 {
+    .@{form-prefix-cls}-item {
+      display: flex;
+    }
+    .@{form-prefix-cls}-item-label {
+      text-align: left;
+      flex-shrink: 0;
+      & > label::after {
+        margin: 0 8px 0 0;
+      }
+    }
+  }
+  &-label-left-5 {
+    .@{form-prefix-cls}-item-label {
+      width: 95px;
+    }
+  }
+  &-label-left-8 {
+    .@{form-prefix-cls}-item-label {
+      width: 138px;
+    }
+  }
+}
+
+.@{form-prefix-cls}-extra {
+  color: #222;
+  font-size: 12px;
+}

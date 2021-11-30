@@ -1,0 +1,47 @@
+/**
+ * 通用变量补丁
+ * 注意为规避影响到主题定制功能，color 相关补丁请慎重添加，务必验证
+**/
+@ked-patch-prefix: ked-patch;
+
+// ------Themes------
+@border-radius-base: 2px;
+@border-radius-sm: 2px;
+
+// Base background color for most components
+@text-color: #333;
+
+// vertical padding for all form controls
+@control-padding-horizontal: @padding-md;
+@control-padding-horizontal-sm: @padding-sm;
+
+// Border color
+@border-color-base: #ddd;
+@btn-default-border: @grey-1;
+@border-color-split: #F0F0F0;
+
+// background color
+@background-color-light: #f5f5f5;
+
+// Disabled states
+@disabled-color: fade(@grey-1, 50%);
+@disabled-bg: #f5f5f5;
+
+// Buttons
+@btn-font-size-sm: @font-size-sm;
+
+// Input
+@input-placeholder-color: @grey-1;
+
+// shadow
+@shadow-color: rgba(0, 0, 0, 0.1);
+@shadow-2: 0 0 5px @shadow-color;
+@shadow-1-down: @shadow-2;
+
+// tag
+// @tag-default-bg: #ebf5ff;
+// @tag-default-color: @primary-color;
+
+// timeline
+@timeline-grey: #E9E9E9;
+@timeline-passed-text-color: #999;

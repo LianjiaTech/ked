@@ -1,0 +1,67 @@
+/**
+ * Timeline 组件补丁
+**/
+@timeline-patch-prefix-cls: ~'@{ked-patch-prefix}-timeline';
+
+.@{timeline-prefix-cls} {
+  &-item {
+    padding-bottom: 20px;
+    &-head {
+      &-blue:not(&-custom),
+      &-red:not(&-custom),
+      &-green:not(&-custom) {
+        background-color: @primary-color;
+        border-color: rgba(255, 255, 255, 0.75) !important;
+        //border-color: color(~`colorPalette('@{primary-color}', 1.5) `);
+        border-width: 2px;
+        box-sizing: content-box;
+        margin: -3px 0 0 -3px;
+        outline: 8px solid @white;
+      }
+      &-blue:not(&-custom) {
+        background-color: @blue-6 !important;
+      }
+      &-red:not(&-custom) {
+        background-color: @red-6 !important;
+      }
+      &-green:not(&-custom) {
+        background-color: @green-6 !important;
+      }
+    }
+    &-tail {
+      border-left-width: 1px;
+    }
+    .anticon {
+      outline: 8px solid @white;
+    }
+  }
+  &&-pending &-item-last &-item-tail {
+    border-left-width: 1px;
+    border-left-style: dashed;
+  }
+  &.@{timeline-prefix-cls}-alternate,
+  &.@{timeline-prefix-cls}-right {
+    .@{timeline-prefix-cls}-item {
+      &-head {
+        margin-left: -7px;
+        &-custom {
+          margin-left: 1px;
+        }
+      }
+    }
+  }
+}
+
+.@{timeline-patch-prefix-cls} {
+  &-passed {
+    color: @timeline-passed-text-color;
+    .@{timeline-prefix-cls} {
+      &-item-head {
+        margin: 0;
+        border-width: 0;
+        border-color: transparent !important;
+        background-color: @timeline-grey !important;
+      }
+    }
+  }
+}

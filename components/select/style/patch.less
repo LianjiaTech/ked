@@ -1,0 +1,14 @@
+/**
+ * Select 样式补丁
+**/
+
+// 调整select下拉框 hover状态颜色
+.@{select-prefix-cls}-dropdown {
+  &-menu {
+    &-item {
+      &:hover:not(&-disabled) {
+        color: @primary-color;
+      }
+    }
+  }
+}

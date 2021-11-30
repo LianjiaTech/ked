@@ -1,0 +1,50 @@
+/**
+ * Table 样式补丁
+**/
+@table-patch-prefix-cls: ~'@{ked-patch-prefix}-table';
+
+.@{table-patch-prefix-cls} {
+  &-outer-border {
+    .@{table-prefix-cls}-content {
+      border: 1px solid @grey-3;
+
+      .@{table-prefix-cls}-thead {
+        tr {
+          background-color: transparent;
+        }
+      }
+
+      .@{table-prefix-cls}-body {
+        margin: 0 8px;
+
+        tr:last-child td {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &-zebra-crossing {
+    .@{table-prefix-cls}-thead {
+      tr > th {
+        border-bottom: none;
+      }
+    }
+    .@{table-prefix-cls}-tbody {
+      tr > td {
+        border-bottom: none;
+      }
+      tr:nth-child(2n) {
+        background-color: @grey-2;
+      }
+    }
+  }
+
+  &-merge-header {
+    .@{table-prefix-cls}-thead > tr:first-child:not(:last-child) {
+      & > th[colspan] {
+        background-color: @grey-4;
+      }
+    }
+  }
+}

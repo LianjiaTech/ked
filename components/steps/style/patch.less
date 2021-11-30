@@ -1,0 +1,180 @@
+/**
+ * Steps 组件补丁
+**/
+
+@steps-finish-dot-size: 14px;
+@steps-current-dot-size: 20px;
+
+@finish-border-color: color(~`colorPalette('@{primary-color}', 1.5) `);
+@process-border-color: @finish-border-color;
+@wait-border-color: #e9e9e9;
+@error-border-color: color(~`colorPalette('@{error-color}', 2.5) `);
+
+@process-icon-dot-color: @primary-color;
+@finish-icon-dot-color: @process-icon-dot-color;
+@wait-icon-dot-color: #fff;
+@error-icon-dot-color: @error-color;
+
+.@{steps-prefix-cls}-item-icon {
+  border-width:2px;
+  font-size:13px;
+  display:block;
+  line-height: 24px;
+}
+
+.@{steps-prefix-cls}-item-title{
+  color: @process-icon-color !important;
+  font-size: 14px;
+  padding-right: 0 !important;
+}
+
+.@{steps-prefix-cls}-item-description{
+  font-size:12px;
+}
+
+.step-item-status(@status) {
+  @border-color: '@{status}-border-color';
+  @icon-dot-color: '@{status}-icon-dot-color';
+  &-@{status} &-icon {
+    > .@{steps-prefix-cls}-icon {
+      .@{steps-prefix-cls}-icon-dot {
+        background: @@icon-dot-color;
+        border-style: solid;
+        border-width: 2px;
+        border-color: @@border-color;
+      }
+    }
+  }
+}
+
+.@{steps-prefix-cls}-horizontal{
+  .@{steps-prefix-cls}-item{
+    margin-right: 0;
+    overflow: visible !important;
+  }
+  .@{steps-prefix-cls}-item-icon {
+    margin-left: 41px;
+  }
+  .@{steps-prefix-cls}-item-tail{
+    margin-left: 46px;
+    padding: 0 24px;
+    &:after{
+      height: 2px;
+      margin-left: 6px;
+    }
+  }
+  .@{steps-prefix-cls}-item-finish{
+    .@{steps-prefix-cls}-item-icon{
+      &:after{
+        background: @process-icon-color;
+      }
+    }
+  }
+  .@{steps-prefix-cls}-item-container > .@{steps-prefix-cls}-item-content > .@{steps-prefix-cls}-item-title::after,
+  .@{steps-prefix-cls}-item:last-child .@{steps-prefix-cls}-item-icon::after{
+    display:none;
+  }
+  .@{steps-prefix-cls}-item-custom  .@{steps-prefix-cls}-item-icon{
+    text-align:left;
+  }
+  .@{steps-prefix-cls}-item-content{
+    text-align: center;
+    width: 104px;
+  }
+}
+
+.@{steps-prefix-cls}-horizontal:not(.@{steps-prefix-cls}-label-vertical) .@{steps-prefix-cls}-item-tail{
+  display: block !important;
+}
+
+.@{steps-prefix-cls}-horizontal:not(.@{steps-prefix-cls}-label-vertical) .@{steps-prefix-cls}-item{
+  margin-right: 0 !important;
+}
+
+.@{steps-prefix-cls}-vertical {
+  .@{steps-prefix-cls}-item > .@{steps-prefix-cls}-item-container > .@{steps-prefix-cls}-item-tail::after{
+    margin-left:-4px
+  }
+  .@{steps-prefix-cls}-item-tail{
+    display: block !important;
+    margin-left:0;
+    width:100%;
+    &:after{
+      width:2px !important;
+    }
+  }
+  .@{steps-prefix-cls}-item{
+    margin-right: 0;
+    &-description{
+      padding-bottom: 32px !important;
+    }
+  }
+  .@{steps-prefix-cls}-item-icon{
+    margin-right: 8px;
+  }
+}
+
+.@{steps-prefix-cls}-vertical.@{steps-prefix-cls}-small > .@{steps-prefix-cls}-item > .@{steps-prefix-cls}-item-container > .@{steps-prefix-cls}-item-tail::after{
+  margin-left:0
+}
+
+.@{steps-prefix-cls}-label-vertical{
+  .@{steps-prefix-cls}-item-tail{
+    margin-left:74px;
+  }
+}
+.@{steps-prefix-cls}-item-wait > .@{steps-prefix-cls}-item-container > .@{steps-prefix-cls}-item-content {
+  .@{steps-prefix-cls}-item-title,.@{steps-prefix-cls}-item-description{
+    color:#ccc !important;
+  }
+}
+.@{steps-prefix-cls}-item-process > .@{steps-prefix-cls}-item-container > .@{steps-prefix-cls}-item-content > .@{steps-prefix-cls}-item-description{
+  color:#999 !important;
+}
+.@{steps-prefix-cls}-small .@{steps-prefix-cls}-item-tail{
+  top: 11px;
+}
+.@{steps-prefix-cls}{
+  &-item{
+    &:last-child .@{steps-prefix-cls}-item-tail{
+      display: none !important;
+    }
+  }
+}
+
+.@{steps-prefix-cls}-dot {
+  .@{steps-prefix-cls}-item {
+    &-tail {
+      margin-left: 50px ;
+      padding: 0;
+      &::after {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+    .@{steps-prefix-cls}-item-icon {
+      width: @steps-finish-dot-size;
+      height: @steps-finish-dot-size;
+      line-height: @steps-finish-dot-size;
+
+      .@{steps-prefix-cls}-icon-dot {
+        top: -3px;
+      }
+    }
+    &-active {
+      .@{steps-prefix-cls}-item-icon {
+        width: @steps-current-dot-size;
+        height: @steps-current-dot-size;
+        line-height: @steps-current-dot-size;
+        margin-bottom: -6px;
+
+        .@{steps-prefix-cls}-icon-dot {
+          top: -6px;
+        }
+      }
+    }
+  }
+  .@{steps-prefix-cls}-item-icon::after{
+    display:none !important;
+  }
+}

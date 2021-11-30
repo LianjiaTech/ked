@@ -1,0 +1,28 @@
+/**
+ * Button 样式补丁
+**/
+
+// 按钮置灰状态修改
+.@{btn-prefix-cls} {
+  &.disabled:not(&-background-ghost):not(&-link) {
+    background-color: #ddd !important;
+    border-color: #ddd;
+    color: #fff !important;
+  }
+  &[disabled]:not(&-background-ghost):not(&-link) {
+    background-color: #ddd !important;
+    color: #fff !important;
+    border-color: #ddd;
+  }
+}
+
+// sm下的字体大小
+.button-group-base(@btnClassName) {
+  &-sm > .@{btnClassName},
+  &-sm > span > .@{btnClassName} {
+    .button-size(@btn-height-sm; @btn-padding-sm; @font-size-sm; 0);
+    > .@{iconfont-css-prefix} {
+      font-size: @font-size-sm;
+    }
+  }
+}
