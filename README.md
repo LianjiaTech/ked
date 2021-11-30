@@ -3,7 +3,7 @@
 > `kedesign` 是基于 Ke Design 设计体系的 React UI 组件库，主要用于研发企业级中后台产品。<br/>
 
 
-## ked和antd
+## kedesign和antd
 >  `kedesign`在antd的基础上做了二次开发，组件的api和antd3+版本保持一致，交互样式遵循的是ke Design的设计规范。<br/>
 >   目前主要服务于贝壳内部，贝壳同学可以通过内网访问[ked官网](https://gem.ke.com/site/ked/v/index/)查看组件用法。<br/>
 
