@@ -2,9 +2,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
-      "@ke/ked": ["components/index.tsx"],
-      "@ke/ked/es/*": ["components/*"],
-      "@ke/ked/lib/*": ["components/*"]
+      "kedesign": ["components/index.tsx"],
+      "kedesign/es/*": ["components/*"],
+      "kedesign/lib/*": ["components/*"]
     },
     "esModuleInterop": true,
     "strictNullChecks": true,
