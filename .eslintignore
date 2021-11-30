@@ -1,0 +1,27 @@
+# config files
+*.eslintrc.js
+*.jest.js
+*.jest.node.js
+*.remarkrc.js
+
+# components
+components/calendar/locale/*.jsx
+!components/*/__tests__/**/*.js
+!components/*/demo/*
+!.*.js
+
+# script
+scripts/*.js
+
+# Docs templates
+site/theme/template/IconDisplay/*.js
+site/theme/template/IconDisplay/*.jsx
+typings
+es/**/*
+lib/**/*
+node_modules
+_site
+dist
+build
+buildTask
+**/*.d.ts
